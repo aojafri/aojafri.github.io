@@ -96,5 +96,71 @@
 
     </footer>
 
+
+    <!-- Saufter Integration Code - Anonymous Visitors -->
+    <script async>
+        function loadSaufterScript() {
+            const domain = "https://contenttrials.saufter.io";
+            const integrationId = "2";
+            const trackingScript = document.createElement("script");
+
+            trackingScript.src =
+                domain +
+                "/api/trackings/user-activity.js?version=" +
+                new Date().toISOString().slice(0, 13) +
+                "&integrationId=" +
+                integrationId;
+
+            trackingScript.setAttribute("rel", "nofollow,noindex");
+            trackingScript.setAttribute(
+                "helpdesk-integration-id",
+                integrationId
+            );
+            trackingScript.setAttribute(
+                "helpdesk-api-integration-script",
+                "true"
+            );
+
+            document.querySelector("body").appendChild(trackingScript);
+        }
+
+        loadSaufterScript();
+    </script>
+
+
+    <!-- Saufter Common Tracking -->
+    <script defer>
+        (function () {
+            function loadSaufterScript() {
+                var domain = "https://contenttrials.saufter.io";
+                var integrationId = "2";
+                var version = new Date().toISOString().slice(0, 13);
+
+                var sScr = document.createElement("script");
+
+                sScr.src =
+                    domain +
+                    "/api/trackings/common.js?version=" +
+                    version +
+                    "&integrationId=" +
+                    integrationId;
+
+                sScr.setAttribute("rel", "nofollow,noindex");
+                sScr.setAttribute(
+                    "helpdesk-api-integration-id",
+                    integrationId
+                );
+                sScr.setAttribute(
+                    "helpdesk-api-integration-script",
+                    "true"
+                );
+
+                document.querySelector("body").appendChild(sScr);
+            }
+
+            loadSaufterScript();
+        })();
+    </script>
+
 </body>
 </html>
